@@ -32,5 +32,19 @@ public class RangeContainsTest {
 		boolean result = range.contains(3);
 		assertFalse("value is below the range", result);
 	}
+	
+	@Test
+	public void valueThatIsTheLowerBound()
+	{
+	    boolean result = range.contains(5);
+	    assertTrue("The range does not think its lower bound is inside it.", result);
+	}
+	
+	@Test
+	public void valueThatIsTheUpperBound()
+	{
+	    boolean result = range.contains(10);
+        assertTrue("The range does not think its lower bound is inside it.", result);
+	}
 
 }
