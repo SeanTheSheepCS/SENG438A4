@@ -6,6 +6,7 @@ import org.junit.*;
 
 public class RangeTest {
 private Range exampleRange;
+private Range exampleRangeTwo;
 
 @BeforeClass 
 public static void setUpBeforeClass()
@@ -16,12 +17,19 @@ public static void setUpBeforeClass()
 @Before
 public void setUp() throws Exception { 
 	exampleRange = new Range(-1, 1);
+	exampleRangeTwo = new Range(-5, 10);
 }
 
 @Test
 public void centralValueShouldBeZero() {
 	assertEquals("The central value of -1 and 1 should be 0",
 			0, exampleRange.getCentralValue(), .000000001d);
+}
+
+@Test
+public void centralValueButCentralValueIsNotZero()
+{
+    assertEquals("The central value of -5 and 10 should be 2.5", 2.5, exampleRangeTwo.getCentralValue(), .000000001d);
 }
 
 @Test
