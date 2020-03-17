@@ -47,8 +47,8 @@ public class RangeExpandToIncludeTest
     {
         try
         {
-            Range shouldBeARangeFromMinusTenToTwo = Range.expandToInclude(exampleRange, -10);
-            assertEquals("The range produced by expand below lower bound did not match the expected result...", new Range(-10,2), shouldBeARangeFromMinusTenToTwo);
+            Range shouldBeARangeFromMinusTenToSeven = Range.expandToInclude(exampleRange, -10);
+            assertEquals("The range produced by expand below lower bound did not match the expected result...", new Range(-10,7), shouldBeARangeFromMinusTenToSeven);
         }
         catch(Exception e)
         {
