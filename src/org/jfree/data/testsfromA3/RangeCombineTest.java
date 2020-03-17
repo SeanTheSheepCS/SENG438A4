@@ -71,8 +71,8 @@ public class RangeCombineTest {
 
 	@Test
 	public void combinedRangeZeroAndNeg() {
-		Range expected = new Range(-5.0, 0.0);
-		assertEquals("Expected range is (-5.0, 0.0)", expected, Range.combine(negRange1, negToZeroRange));
+		Range expected = new Range(-6.0, 0.0);
+		assertEquals("Expected range is (-6.0, 0.0)", expected, Range.combine(negRange1, negToZeroRange));
 	}
 	
 	@Test

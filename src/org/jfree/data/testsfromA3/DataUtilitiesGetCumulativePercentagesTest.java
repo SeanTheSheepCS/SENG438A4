@@ -37,19 +37,19 @@ public class DataUtilitiesGetCumulativePercentagesTest {
 				will(returnValue(0));
 				
 				atLeast(1).of(input).getValue(0);
-				will(returnValue(20));
+				will(returnValue(10));
 				
 				atLeast(1).of(input).getKey(1);
 				will(returnValue(1));
 				
 				atLeast(1).of(input).getValue(1);
-				will(returnValue(40));
+				will(returnValue(30));
 				
 				atLeast(1).of(input).getKey(2);
-				will(returnValue(3));
+				will(returnValue(2));
 				
 				atLeast(1).of(input).getValue(2);
-				will(returnValue(60));
+				will(returnValue(40));
 				
 			} 
 		});
@@ -65,7 +65,7 @@ public class DataUtilitiesGetCumulativePercentagesTest {
 				will(returnValue(0));
 				
 				atLeast(1).of(expected).getValue(0);
-				will(returnValue(0.166));
+				will(returnValue(0.125));
 				
 				atLeast(1).of(expected).getKey(1);
 				will(returnValue(1));
@@ -101,19 +101,19 @@ public class DataUtilitiesGetCumulativePercentagesTest {
 				will(returnValue(0));
 				
 				atLeast(1).of(input).getValue(0);
-				will(returnValue(-20));
+				will(returnValue(-10));
 				
 				atLeast(1).of(input).getKey(1);
 				will(returnValue(1));
 				
 				atLeast(1).of(input).getValue(1);
-				will(returnValue(-40));
+				will(returnValue(-30));
 				
 				atLeast(1).of(input).getKey(2);
-				will(returnValue(3));
+				will(returnValue(2));
 				
 				atLeast(1).of(input).getValue(2);
-				will(returnValue(-60));
+				will(returnValue(-40));
 				
 			} 
 		});
@@ -129,7 +129,7 @@ public class DataUtilitiesGetCumulativePercentagesTest {
 				will(returnValue(0));
 				
 				atLeast(1).of(expected).getValue(0);
-				will(returnValue(0.166));
+				will(returnValue(0.125));
 				
 				atLeast(1).of(expected).getKey(1);
 				will(returnValue(1));
