@@ -10,11 +10,13 @@ import org.junit.Test;
 public class RangeIntersectTest {
 	public static Range positiveControlRange;
 	public static Range negativeControlRange;
+	public static Range singleNumberRange;
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
 		positiveControlRange = new Range (2, 10);
 		negativeControlRange = new Range (-16, -8);
+		singleNumberRange = new Range(1, 1);
 	}
 
 	@Test
@@ -79,6 +81,14 @@ public class RangeIntersectTest {
 		Boolean intersectsResult = negativeControlRange.intersects(-13, -10);
 		assertTrue("range that is subset of another range intersects", intersectsResult);
 	}
-
-
+	
+	//SPECIAL TESTS FOR INTERSECTS
+	
+	@Test
+	public void aSingleNumberRangeShouldIntersectWithItself()
+	{
+	    Boolean intersectsResult = singleNumberRange.intersects(1, 1);
+        assertTrue("A single number range should intersect with itself.", intersectsResult);
+	}
+	
 }
