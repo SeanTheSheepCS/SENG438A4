@@ -9,7 +9,7 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-public class RangeShiftTest____ThreeArguments 
+public class RangeShiftTest____ThreeArgumentsTest 
 {
     private Range exampleRange = new Range(-20,30);
     

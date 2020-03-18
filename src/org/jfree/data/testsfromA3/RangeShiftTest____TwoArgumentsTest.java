@@ -12,7 +12,7 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-public class RangeShiftTest____TwoArguments 
+public class RangeShiftTest____TwoArgumentsTest 
 {
     Range exampleRange;
     Range nullRange;
