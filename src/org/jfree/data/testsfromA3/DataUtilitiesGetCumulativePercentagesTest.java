@@ -207,6 +207,71 @@ public class DataUtilitiesGetCumulativePercentagesTest {
 		
 	}
 	
+	
+	@Test
+	public void CumilativePercentageWithNullValueTest() {
+		Mockery mockingContext1 = new Mockery(); 
+		final KeyedValues input = mockingContext1.mock(KeyedValues.class);
+		mockingContext1.checking(new Expectations() { 
+			{
+				atLeast(1).of(input).getItemCount();
+				will(returnValue(3));
+				
+				atLeast(1).of(input).getKey(0);
+				will(returnValue(0));
+				
+				atLeast(1).of(input).getValue(0);
+				will(returnValue(10));
+				
+				atLeast(1).of(input).getKey(1);
+				will(returnValue(1));
+				
+				atLeast(1).of(input).getValue(1);
+				will(returnValue(30));
+				
+				atLeast(1).of(input).getKey(2);
+				will(returnValue(2));
+				
+				atLeast(1).of(input).getValue(2);
+				will(returnValue(null));
+				
+			} 
+		});
+		
+		Mockery mockingContext2 = new Mockery();
+		final KeyedValues expected = mockingContext2.mock(KeyedValues.class);
+		mockingContext2.checking(new Expectations() {
+			{
+				atLeast(1).of(expected).getItemCount(); 
+				will(returnValue(3));
+			
+				atLeast(1).of(expected).getKey(0);
+				will(returnValue(0));
+				
+				atLeast(1).of(expected).getValue(0);
+				will(returnValue(0.25));
+				
+				atLeast(1).of(expected).getKey(1);
+				will(returnValue(1));
+				
+				atLeast(1).of(expected).getValue(1);
+				will(returnValue(1.0));
+				
+				atLeast(1).of(expected).getKey(2);
+				will(returnValue(2));
+				
+				atLeast(1).of(expected).getValue(2);
+				will(returnValue(1.0));
+			} 
+		});
+		
+
+		
+		assertTrue("Cumalating percentages for positive numbers error (last value should be 1.0)", DataUtilities.getCumulativePercentages(input).equals(expected));
+	}
+	
+	
+	
 	@After
 	public void tearDown() throws Exception {
 	}
